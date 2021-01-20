@@ -23,87 +23,87 @@ function CustomerList() {
 
   return (
     <div className="p-3">
-      <p class="fs-5 text-primary fw-bold text-uppercase">Customer List</p>
+      <p className="fs-5 text-primary fw-bold text-uppercase">Customer List</p>
       <div className="p-3 mb-4 border border-primary rounded-3">
-        <table class="table table-sm table-hover">
+        <table className="table table-sm table-hover">
           <thead>
             <tr>
               <th scope="col">
-                <div class="btn-group" role="group">
-                  <div type="button" class="btn btn-sm" disabled>
+                <div className="btn-group" role="group">
+                  <div type="button" className="btn btn-sm" disabled>
                     Id
                   </div>
-                  <button type="button" class="btn btn-sm btn-primary">
+                  <button type="button" className="btn btn-sm btn-primary">
                     <BsArrowUpDown />
                   </button>
                 </div>
               </th>
               <th scope="col">
-                <div class="btn-group" role="group">
-                  <div type="button" class="btn btn-sm" disabled>
+                <div className="btn-group" role="group">
+                  <div type="button" className="btn btn-sm" disabled>
                     Company
                   </div>
-                  <button type="button" class="btn btn-sm btn-primary">
+                  <button type="button" className="btn btn-sm btn-primary">
                     <BsArrowUpDown />
                   </button>
                 </div>
               </th>
               <th scope="col">
-                <div class="btn-group" role="group">
-                  <div type="button" class="btn btn-sm" disabled>
+                <div className="btn-group" role="group">
+                  <div type="button" className="btn btn-sm" disabled>
                     Address
                   </div>
-                  <button type="button" class="btn btn-sm btn-primary">
+                  <button type="button" className="btn btn-sm btn-primary">
                     <BsArrowUpDown />
                   </button>
                 </div>
               </th>
               <th scope="col">
-                <div class="btn-group " role="group">
-                  <div type="button" class="btn btn-sm" disabled>
+                <div className="btn-group " role="group">
+                  <div type="button" className="btn btn-sm" disabled>
                     PIC Name
                   </div>
-                  <button type="button" class="btn btn-sm btn-primary">
+                  <button type="button" className="btn btn-sm btn-primary">
                     <BsArrowUpDown />
                   </button>
                 </div>
               </th>
               <th scope="col">
-                <div class="btn-group" role="group">
-                  <div type="button" class="btn btn-sm" disabled>
+                <div className="btn-group" role="group">
+                  <div type="button" className="btn btn-sm" disabled>
                     Phone
                   </div>
-                  <button type="button" class="btn btn-sm btn-primary">
+                  <button type="button" className="btn btn-sm btn-primary">
                     <BsArrowUpDown />
                   </button>
                 </div>
               </th>
               <th scope="col">
-                <div class="btn-group" role="group">
-                  <div type="button" class="btn btn-sm" disabled>
+                <div className="btn-group" role="group">
+                  <div type="button" className="btn btn-sm" disabled>
                     Email
                   </div>
-                  <button type="button" class="btn btn-sm btn-primary">
+                  <button type="button" className="btn btn-sm btn-primary">
                     <BsArrowUpDown />
                   </button>
                 </div>
               </th>
               <th scope="col">
-                <div class="btn-group" role="group">
-                  <div type="button" class="btn btn-sm" disabled>
+                <div className="btn-group" role="group">
+                  <div type="button" className="btn btn-sm" disabled>
                     Date
                   </div>
-                  <button type="button" class="btn btn-sm btn-primary">
+                  <button type="button" className="btn btn-sm btn-primary">
                     <BsArrowUpDown />
                   </button>
                 </div>
               </th>
               <th scope="col">
-                <div class="btn-group" role="group">
-                  <div type="button" class="btn btn-sm" disabled>
+                <div className="btn-group" role="group">
+                  <div type="button" className="btn btn-sm" disabled>
                     Last Update
                   </div>
-                  <button type="button" class="btn btn-sm btn-primary">
+                  <button type="button" className="btn btn-sm btn-primary">
                     <BsArrowUpDown />
                   </button>
                 </div>
@@ -118,7 +118,7 @@ function CustomerList() {
           </thead>
           <tbody>
             {customers.map((customer) => (
-              <tr>
+              <tr key={customer.id}>
                 <td>{customer.id}</td>
                 <td>{customer.company_name}</td>
                 <td>{customer.address}</td>
@@ -153,21 +153,21 @@ function CustomerList() {
       </div>
       <div className="d-flex justify-content-end">
         <nav aria-label="Page navigation example">
-          <ul class="pagination">
-            <li class="page-item">
-              <button class="page-link">Previous</button>
+          <ul className="pagination">
+            <li className="page-item">
+              <button className="page-link">Previous</button>
             </li>
-            <li class="page-item">
-              <button class="page-link">1</button>
+            <li className="page-item">
+              <button className="page-link">1</button>
             </li>
-            <li class="page-item">
-              <button class="page-link">2</button>
+            <li className="page-item">
+              <button className="page-link">2</button>
             </li>
-            <li class="page-item">
-              <button class="page-link">3</button>
+            <li className="page-item">
+              <button className="page-link">3</button>
             </li>
-            <li class="page-item">
-              <button class="page-link">Next</button>
+            <li className="page-item">
+              <button className="page-link">Next</button>
             </li>
           </ul>
         </nav>
