@@ -132,11 +132,11 @@ function CustomerList() {
                   {format.asString('dd-MM-yyyy', new Date(customer.updated_at))}
                 </td>
                 <td>
-                  <button className="btn">
+                  <div className="btn">
                     <Link to={`/edit-customer/${customer.id}`}>
                       <BsPen />
                     </Link>
-                  </button>
+                  </div>
                 </td>
                 <td>
                   <button

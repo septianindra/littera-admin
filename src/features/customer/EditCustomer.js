@@ -6,10 +6,8 @@ import { fetchSingleCustomer } from './customersSlice'
 function EditCustomer() {
   let { id } = useParams()
   const dispatch = useDispatch()
-  const customer = useSelector((state) => state.customers.customers)
-
-  const customerStatus = useSelector((state) => state.customers.status)
-
+  const customerStatus = useSelector((state) => state.customers.singleStatus)
+  const customer = useSelector((state) => state.customers.customer)
   const error = useSelector((state) => state.customers.error)
 
   useEffect(() => {
@@ -29,39 +27,59 @@ function EditCustomer() {
       <form class="p-3">
         <div className="row border border-1 border-primary rounded-3 p-4">
           <div class="col-md-6 ">
-            <label for="inputEmail4" class="form-label">
+            <label for="companyName" class="form-label">
               Company Name
             </label>
             <input
               type="email"
-              value={customer.company_name}
               class="form-control"
-              id="inputEmail4"
+              id="companyName"
+              value={customer.company_name}
             />
           </div>
           <div class="col-md-6">
-            <label for="inputPassword4" class="form-label">
+            <label for="picName" class="form-label">
               PIC Name
             </label>
-            <input type="password" class="form-control" id="inputPassword4" />
+            <input
+              type="text"
+              class="form-control"
+              id="picName"
+              value={customer.pic_name}
+            />
           </div>
           <div class="col-md-6">
-            <label for="inputCity" class="form-label">
+            <label for="inputCiphonety" class="form-label">
               Phone
             </label>
-            <input type="text" class="form-control" id="inputCity" />
+            <input
+              type="text"
+              class="form-control"
+              id="phone"
+              value={customer.phone}
+            />
           </div>
           <div class="col-md-6">
-            <label for="inputZip" class="form-label">
+            <label for="email" class="form-label">
               Email
             </label>
-            <input type="text" class="form-control" id="inputZip" />
+            <input
+              type="text"
+              class="form-control"
+              id="email"
+              value={customer.email}
+            />
           </div>
           <div class="col-12">
-            <label for="inputAddress" class="form-label">
+            <label for="address" class="form-label">
               Address
             </label>
-            <input type="text" class="form-control" id="inputAddress" />
+            <input
+              type="text"
+              class="form-control"
+              id="address"
+              value={customer.address}
+            />
           </div>
           <div class="d-flex justify-content-end mt-4">
             <button type="submit" class="btn btn-sm btn-primary mx-2">
@@ -77,12 +95,9 @@ function EditCustomer() {
   } else if (customerStatus === 'failed') {
     content = <div>{error}</div>
   }
+  console.log(customer)
 
-  return (
-    <>
-      <div>{content}</div>
-    </>
-  )
+  return <>{content}</>
 }
 
 export default EditCustomer

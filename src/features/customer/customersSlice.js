@@ -7,6 +7,7 @@ const initialState = {
   status: 'idle',
   error: null,
   singleStatus: 'idle',
+  singleError: null,
 }
 
 export const fetchCustomers = createAsyncThunk(
@@ -65,15 +66,15 @@ const customersSlice = createSlice({
       state.error = action.error.message
     },
     [fetchSingleCustomer.pending]: (state, action) => {
-      state.status = 'loading'
+      state.singleStatus = 'loading'
     },
     [fetchSingleCustomer.fulfilled]: (state, action) => {
-      state.status = 'succeeded'
+      state.singleStatus = 'succeeded'
       state.customer = action.payload.data[0]
     },
     [fetchSingleCustomer.rejected]: (state, action) => {
-      state.status = 'failed'
-      state.error = action.error.message
+      state.singleStatus = 'failed'
+      state.singleError = action.error.message
     },
     [addNewCustomers.fulfilled]: (state, action) => {
       state.customers = state.customers.concat(action.payload)

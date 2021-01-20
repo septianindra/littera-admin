@@ -19,8 +19,10 @@ function SideMenu() {
         <div className="btn w-100 text-start ">
           <div className="d-flex align-items-center">
             <BsHouseDoor size="1.5rem" />
-            <div className=" mx-2">
-              <Link to="/">Dashboard</Link>
+            <div>
+              <Link className="nav-link" to="/">
+                Dashboard
+              </Link>
             </div>
           </div>
         </div>
@@ -30,7 +32,9 @@ function SideMenu() {
           <div className="d-flex align-items-center">
             <BsFolder size="1.5rem" />
             <div className="mx-2">
-              <Link to="/qbank">Q bank</Link>
+              <Link className="nav-link" to="/qbank">
+                Q bank
+              </Link>
             </div>
           </div>
         </div>
@@ -39,8 +43,10 @@ function SideMenu() {
         <div className="btn w-100 text-start ">
           <div className="d-flex align-items-center">
             <BsPerson size="1.5rem" />
-            <div className=" mx-2">
-              <Link to="/customer">Customer</Link>
+            <div>
+              <Link className="nav-link" to="/customer">
+                Customer
+              </Link>
             </div>
           </div>
         </div>
@@ -49,8 +55,10 @@ function SideMenu() {
         <div className="btn w-100 text-start ">
           <div className="d-flex align-items-center">
             <BsReverseLayoutTextSidebarReverse size="1.5rem" />
-            <div className=" mx-2">
-              <Link to="/exam">Exam</Link>
+            <div>
+              <Link className="nav-link" to="/exam">
+                Exam
+              </Link>
             </div>
           </div>
         </div>
@@ -59,8 +67,10 @@ function SideMenu() {
         <div className="btn w-100 text-start ">
           <div className="d-flex align-items-center">
             <BsClipboardData size="1.5rem" />
-            <div className=" mx-2">
-              <Link to="/report">Report</Link>
+            <div>
+              <Link className="nav-link" to="/report">
+                Report
+              </Link>
             </div>
           </div>
         </div>
