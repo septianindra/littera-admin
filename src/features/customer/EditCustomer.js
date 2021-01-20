@@ -12,7 +12,7 @@ function EditCustomer() {
 
   useEffect(() => {
     if (customerStatus === 'idle') dispatch(fetchSingleCustomer(id))
-  }, [customerStatus, dispatch])
+  }, [customerStatus, dispatch, id])
 
   let content
 
