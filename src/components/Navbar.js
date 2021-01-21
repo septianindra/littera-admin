@@ -5,7 +5,7 @@ function Navbar() {
     <div>
       <nav className="navbar navbar-expand-lg">
         <div className="d-flex align-items-center">
-          <button type="button" class="btn btn-primary">
+          <button type="button" className="btn btn-primary">
             <BsList />
           </button>
           <div className="input-group mx-3">
