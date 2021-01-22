@@ -20,8 +20,8 @@ function App() {
           </div>
           <div className="col-10 overflow-auto">
             <Navbar />
-            <div class="card">
-              <div class="card-body">
+            <div className="card">
+              <div className="card-body">
                 <Switch>
                   <Route path="/customer">
                     <CustomerPage />

@@ -13,19 +13,19 @@ const initialState = {
 export const fetchCustomers = createAsyncThunk(
   'customers/fetchCustomers',
   async () => {
-    const response = await axios.get(`http://localhost:4000/customers/read`)
+    const response = await axios.get('http://localhost:4000/customers/read')
     return response
-  },
+  }
 )
 
 export const fetchSingleCustomer = createAsyncThunk(
   'customers/fetchSingleCustomer',
   async (id) => {
     const response = await axios.get(
-      `http://localhost:4000/customers/read/${id}`,
+      `http://localhost:4000/customers/read/${id}`
     )
     return response
-  },
+  }
 )
 
 export const addNewCustomers = createAsyncThunk(
@@ -33,20 +33,20 @@ export const addNewCustomers = createAsyncThunk(
   async (data) => {
     const response = await axios.post(
       'http://localhost:4000/customers/create',
-      data,
+      data
     )
     return response
-  },
+  }
 )
 
 export const deleteCustomer = createAsyncThunk(
   'customers/deleteCustomer',
   async (id) => {
     const response = await axios.delete(
-      `http://localhost:4000/customers/delete/${id}`,
+      `http://localhost:4000/customers/delete/${id}`
     )
     return response
-  },
+  }
 )
 
 const customersSlice = createSlice({
@@ -54,7 +54,7 @@ const customersSlice = createSlice({
   initialState,
   reducers: { changeCustomerStatus: (state) => (state.status = 'idle') },
   extraReducers: {
-    [fetchCustomers.pending]: (state, action) => {
+    [fetchCustomers.pending]: (state) => {
       state.status = 'loading'
     },
     [fetchCustomers.fulfilled]: (state, action) => {
@@ -65,7 +65,7 @@ const customersSlice = createSlice({
       state.status = 'failed'
       state.error = action.error.message
     },
-    [fetchSingleCustomer.pending]: (state, action) => {
+    [fetchSingleCustomer.pending]: (state) => {
       state.singleStatus = 'loading'
     },
     [fetchSingleCustomer.fulfilled]: (state, action) => {
@@ -81,7 +81,7 @@ const customersSlice = createSlice({
     },
     [deleteCustomer.fulfilled]: (state, action) => {
       state.customers = state.customers.filter(
-        (cust) => cust.id !== action.payload,
+        (cust) => cust.id !== action.payload
       )
     },
   },

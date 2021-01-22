@@ -2,7 +2,11 @@ import { unwrapResult } from '@reduxjs/toolkit'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
+<<<<<<< HEAD
 import { addNewCustomers, fetchSingleCustomer } from './customersSlice'
+=======
+import { fetchSingleCustomer } from './customersSlice'
+>>>>>>> 82ec69d81df15839079eecddbc3552fc4044807b
 
 function EditCustomer() {
   let { id } = useParams()
@@ -61,74 +65,74 @@ function EditCustomer() {
 
   if (customerStatus === 'idle') {
     content = (
-      <div class="spinner-border" role="status">
-        <span class="visually-hidden">Loading...</span>
+      <div className="spinner-border" role="status">
+        <span className="visually-hidden">Loading...</span>
       </div>
     )
   } else if (customerStatus === 'succeeded') {
     content = (
-      <form class="p-3">
+      <form className="p-3">
         <div className="row border border-1 border-primary rounded-3 p-4">
-          <div class="col-md-6 ">
-            <label for="companyName" class="form-label">
+          <div className="col-md-6 ">
+            <label htmlFor="companyName" className="form-label">
               Company Name
             </label>
             <input
               type="email"
-              class="form-control"
+              className="form-control"
               id="companyName"
               value={customer.company_name}
             />
           </div>
-          <div class="col-md-6">
-            <label for="picName" class="form-label">
+          <div className="col-md-6">
+            <label htmlFor="picName" className="form-label">
               PIC Name
             </label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="picName"
               value={customer.pic_name}
             />
           </div>
-          <div class="col-md-6">
-            <label for="inputCiphonety" class="form-label">
+          <div className="col-md-6">
+            <label htmlFor="inputCiphonety" className="form-label">
               Phone
             </label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="phone"
               value={customer.phone}
             />
           </div>
-          <div class="col-md-6">
-            <label for="email" class="form-label">
+          <div className="col-md-6">
+            <label htmlFor="email" className="form-label">
               Email
             </label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="email"
               value={customer.email}
             />
           </div>
-          <div class="col-12">
-            <label for="address" class="form-label">
+          <div className="col-12">
+            <label htmlFor="address" className="form-label">
               Address
             </label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="address"
               value={customer.address}
             />
           </div>
-          <div class="d-flex justify-content-end mt-4">
-            <button type="submit" class="btn btn-sm btn-primary mx-2">
+          <div className="d-flex justify-content-end mt-4">
+            <button type="submit" className="btn btn-sm btn-primary mx-2">
               submit
             </button>
-            <a type="submit" href="/customer" class="btn btn-sm btn-danger">
+            <a type="submit" href="/customer" className="btn btn-sm btn-danger">
               cancel
             </a>
           </div>

@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addNewCustomers } from './customersSlice'
 
-function CustomerForm(toggle) {
+function CustomerForm() {
   const dispatch = useDispatch()
   const [id, setId] = useState('')
   const [companyName, setCompanyName] = useState('')
@@ -42,7 +42,7 @@ function CustomerForm(toggle) {
       try {
         setAddRequestStatus('pending')
         const resultAction = await dispatch(
-          addNewCustomers({ id, companyName, address, picName, phone, email }),
+          addNewCustomers({ id, companyName, address, picName, phone, email })
         )
         unwrapResult(resultAction)
         setId('')
@@ -63,7 +63,7 @@ function CustomerForm(toggle) {
     <form className="p-3">
       <div className="row border border-1 border-primary rounded-3 p-4">
         <div className="col-6 ">
-          <label for="company_name" class="form-label">
+          <label htmlFor="company_name" className="form-label">
             Company Name
           </label>
           <input
@@ -76,7 +76,7 @@ function CustomerForm(toggle) {
           />
         </div>
         <div className="col-6">
-          <label for="pic_name" className="form-label">
+          <label htmlFor="pic_name" className="form-label">
             PIC Name
           </label>
           <input
@@ -89,7 +89,7 @@ function CustomerForm(toggle) {
           />
         </div>
         <div className="col-6">
-          <label for="email" className="form-label">
+          <label htmlFor="email" className="form-label">
             Phone
           </label>
           <input
@@ -102,7 +102,7 @@ function CustomerForm(toggle) {
           />
         </div>
         <div className="col-md-6">
-          <label for="phone" className="form-label">
+          <label htmlFor="phone" className="form-label">
             Email
           </label>
           <input
@@ -115,7 +115,7 @@ function CustomerForm(toggle) {
           />
         </div>
         <div className="col-12">
-          <label for="address" className="form-label">
+          <label htmlFor="address" className="form-label">
             Address
           </label>
           <input
