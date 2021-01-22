@@ -77,7 +77,7 @@ const customersSlice = createSlice({
       state.singleError = action.error.message
     },
     [addNewCustomers.fulfilled]: (state, action) => {
-      state.customers = state.customers.concat(action.payload)
+      state.customers = state.customers.concat(action.payload.data[0])
     },
     [deleteCustomer.fulfilled]: (state, action) => {
       state.customers = state.customers.filter(

@@ -6,6 +6,7 @@ import {
   BsPerson,
   BsHouseDoor,
   BsReverseLayoutTextSidebarReverse,
+  BsEye,
 } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 
@@ -70,6 +71,18 @@ function SideMenu() {
             <div>
               <Link className="nav-link" to="/report">
                 Report
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="d-flex mx-5 mt-4">
+        <div className="btn w-100 text-start ">
+          <div className="d-flex align-items-center">
+            <BsEye size="1.5rem" />
+            <div>
+              <Link className="nav-link" to="/proctoring">
+                Proctoring
               </Link>
             </div>
           </div>
