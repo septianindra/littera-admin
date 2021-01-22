@@ -2,11 +2,7 @@ import { unwrapResult } from '@reduxjs/toolkit'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-<<<<<<< HEAD
 import { addNewCustomers, fetchSingleCustomer } from './customersSlice'
-=======
-import { fetchSingleCustomer } from './customersSlice'
->>>>>>> 82ec69d81df15839079eecddbc3552fc4044807b
 
 function EditCustomer() {
   let { id } = useParams()
@@ -47,7 +43,7 @@ function EditCustomer() {
       try {
         setAddRequestStatus('pending')
         const resultAction = await dispatch(
-          addNewCustomers({ id, companyName, address, picName, phone, email }),
+          addNewCustomers({ id, companyName, address, picName, phone, email })
         )
         unwrapResult(resultAction)
         setCompanyName('')
