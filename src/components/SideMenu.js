@@ -81,7 +81,7 @@ function SideMenu() {
           <div className="d-flex align-items-center">
             <BsEye size="1.5rem" />
             <div>
-              <Link className="nav-link" to="/proctoring">
+              <Link className="nav-link" to="/proctor">
                 Proctoring
               </Link>
             </div>
