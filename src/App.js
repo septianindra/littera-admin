@@ -7,10 +7,22 @@ import EditCustomer from './features/customer/EditCustomer'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import ProctoringList from './features/proctoring/ProctoringList'
 import ProctorSingleWindow from './features/proctoring/ProctorSingleWindow'
+import ZoomToggle from './components/ZoomToggle'
 
 function App() {
+  let Toggle
+
+  document.getElementById('zmmtg-root').style.display = 'none'
+  if (process.env.NODE_ENV === 'development') {
+    Toggle = <ZoomToggle />
+  } else {
+    /* eslint-disable no-unused-vars */
+    Toggle = <></>
+  }
+
   return (
     <Router>
+      {Toggle}
       <div className="container-fluid bg-gradient">
         <div className="row">
           <div className="col-2 p-2 vh-100">
